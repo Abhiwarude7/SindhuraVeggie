@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sindhura Veggie | Premium Onion Powder Manufacturer | Export Quality</title>
-    
-    <meta name="description" content="Sindhura Veggie is a leading manufacturer and exporter of premium onion powder, flakes, and garlic powder. ISO & FSSAI certified high-quality dehydrated spices.">
-    <meta name="keywords" content="Sindhura Veggie, Onion Powder, Dehydrated Onion, Export Quality Spices, Garlic Powder, Spice Manufacturer India">
+    <title>Sindhura Veggie | Export Quality</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,152 +19,84 @@
             --glass-bg: rgba(0, 0, 0, 0.85);
         }
 
-        /* Basic Setup */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light-bg);
-            color: #333;
-            overflow-x: hidden;
-            -webkit-user-select: auto; 
-            user-select: auto; 
-        }
-
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: #333; overflow-x: hidden; }
         html { scroll-behavior: smooth; }
 
-        /* --- Navbar Styles --- */
-        .navbar { 
-            background: var(--glass-bg) !important; 
-            backdrop-filter: blur(10px);
-            padding: 15px 0; 
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .navbar.scrolled { padding: 10px 0; background: rgba(0, 0, 0, 0.95) !important; }
-        
+        /* --- Navbar & Language Switcher --- */
+        .navbar { background: var(--glass-bg) !important; backdrop-filter: blur(10px); padding: 15px 0; transition: all 0.3s ease; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .navbar-brand { font-family: 'Playfair Display', serif; }
         .brand-sindhura { color: white; }
         .brand-veggie { color: var(--accent-color); }
-
-        .nav-link { 
-            color: white !important; 
-            font-weight: 500; 
-            margin: 0 10px;
-            position: relative;
+        .nav-link { color: white !important; font-weight: 500; margin: 0 10px; }
+        
+        .lang-switcher {
+            background: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 10px;
         }
-        .nav-link::after {
-            content: ''; position: absolute; width: 0; height: 2px;
-            bottom: 0; left: 0; background: var(--accent-color);
-            transition: 0.3s;
-        }
-        .nav-link:hover::after { width: 100%; }
-        .nav-link:hover { color: var(--accent-color) !important; }
 
         /* --- Hero Section --- */
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
                         url('https://images.unsplash.com/photo-1580201092675-a0a6a6cafbb1?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 95vh;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-align: center;
+            background-size: cover; background-position: center; height: 95vh; display: flex; align-items: center; color: white; text-align: center;
         }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 4.5rem; text-transform: uppercase; font-weight: 700; line-height: 1.1; }
 
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            line-height: 1.1;
-        }
+        .btn-custom { background-color: var(--primary-color); color: white; border-radius: 30px; padding: 12px 35px; border: none; transition: 0.3s; font-weight: 600; }
+        .btn-custom:hover { background-color: #5a3821; color: white; transform: translateY(-3px); }
 
-        .btn-custom {
-            background-color: var(--primary-color);
-            color: white; border-radius: 30px; padding: 12px 35px; 
-            border: none; transition: 0.3s; font-weight: 600;
-        }
-        .btn-custom:hover { 
-            background-color: #5a3821; color: white; 
-            transform: translateY(-3px); box-shadow: 0 8px 20px rgba(125, 78, 45, 0.4); 
-        }
-
-        /* --- Product Cards --- */
-        .product-card {
-            border: none; border-radius: 15px; overflow: hidden;
-            transition: 0.4s; background: #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            height: 100%;
-        }
-        .product-card:hover { transform: translateY(-12px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .product-card img { height: 220px; object-fit: cover; width: 100%; transition: 0.5s; }
-        .product-card:hover img { transform: scale(1.1); }
-
-        /* --- Quality/Certs Section --- */
-        .cert-card {
-            background: white; padding: 30px; border-radius: 15px;
-            border-bottom: 4px solid var(--accent-color);
-            transition: 0.3s; height: 100%;
-        }
-        .cert-card:hover { background: var(--primary-color); color: white; }
+        /* --- Cards & Titles --- */
+        .product-card, .cert-card { background: white; border-radius: 15px; overflow: hidden; transition: 0.4s; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; }
+        .product-card:hover { transform: translateY(-12px); }
+        .cert-card { padding: 30px; border-bottom: 4px solid var(--accent-color); text-align: center; }
         .cert-icon { font-size: 3rem; color: var(--accent-color); margin-bottom: 15px; }
-        .cert-card:hover .cert-icon { color: white; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 50px; position: relative; display: inline-block; }
+        .section-title::after { content: ''; width: 50%; height: 3px; background: var(--accent-color); position: absolute; bottom: -10px; left: 25%; }
 
-        .section-title {
-            font-family: 'Playfair Display', serif; font-size: 3rem;
-            margin-bottom: 50px; position: relative; display: inline-block;
-        }
-        .section-title::after {
-            content: ''; width: 50%; height: 3px; background: var(--accent-color);
-            position: absolute; bottom: -10px; left: 25%;
-        }
-
-        /* --- Process Flow --- */
         .process-bg { background-color: #3d2b1f; color: white; padding: 80px 0; }
         .process-icon { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 10px; }
 
         /* --- Floating Buttons --- */
-        .fixed-contact-buttons {
-            position: fixed; bottom: 30px; right: 30px; 
-            display: flex; flex-direction: column; gap: 15px; z-index: 2000;
-        }
-        .contact-btn {
-            width: 55px; height: 55px; border-radius: 50%; display: flex; 
-            align-items: center; justify-content: center; color: white; 
-            font-size: 24px; text-decoration: none; transition: 0.3s;
-        }
+        .fixed-contact-buttons { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 2000; }
+        .contact-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; text-decoration: none; transition: 0.3s; }
         .whatsapp-btn { background-color: #25d366; }
         .call-btn { background-color: #007bff; }
-        .contact-btn:hover { transform: scale(1.15) rotate(10deg); color: white; }
 
         footer { background: var(--dark-footer); color: white; padding: 50px 0; }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.8rem; }
-            .section-title { font-size: 2.2rem; }
-        }
+        @media (max-width: 768px) { .hero-title { font-size: 2.5rem; } .section-title { font-size: 2rem; } }
     </style>
 </head>
 
-<body oncontextmenu="return false;">
+<body>
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold fs-3" href="#">
                 <span class="brand-sindhura">Sindhura</span><span class="brand-veggie">Veggie</span>
             </a>
+            <div class="d-flex align-items-center order-lg-3">
+                <select class="lang-switcher" onchange="changeLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="mr">मराठी</option>
+                </select>
+            </div>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#specs">Specifications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certs">Quality</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-key="nav-home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products" data-key="nav-products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#specs" data-key="nav-specs">Specifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-key="nav-contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -175,136 +104,92 @@
 
     <header class="hero-section">
         <div class="container" data-aos="fade-up">
-            <span class="text-uppercase tracking-widest mb-2 d-block" style="color: var(--accent-color); letter-spacing: 3px;">Sindhura Veggie India</span>
-            <h1 class="hero-title">Premium Onion <br> Powder Manufacturer</h1>
-            <p class="lead mb-4 fs-4 opacity-75">Supplying Export-Quality Dehydrated Spices Globally.</p>
+            <span class="text-uppercase mb-2 d-block" style="color: var(--accent-color); letter-spacing: 3px;" data-key="hero-sub">Sindhura Veggie India</span>
+            <h1 class="hero-title" data-key="hero-title">Premium Onion <br> Powder Manufacturer</h1>
+            <p class="lead mb-4 fs-4 opacity-75" data-key="hero-desc">Supplying Export-Quality Dehydrated Spices Globally.</p>
             <div class="mt-4">
-                <a href="#products" class="btn btn-custom btn-lg me-2">Our Products</a>
-                <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill px-4">Inquiry Now</a>
+                <a href="#products" class="btn btn-custom btn-lg me-2" data-key="btn-products">Our Products</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill px-4" data-key="btn-inquiry">Inquiry Now</a>
             </div>
         </div>
     </header>
 
-    <section id="certs" class="py-5">
-        <div class="container text-center">
-            <h2 class="section-title" data-aos="fade-down">Certifications</h2>
+    <section id="certs" class="py-5 text-center">
+        <div class="container">
+            <h2 class="section-title" data-key="title-certs">Certifications</h2>
             <div class="row g-4 mt-2">
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-6 col-md-3" data-aos="zoom-in">
                     <div class="cert-card">
                         <i class="fas fa-file-contract cert-icon"></i>
                         <h5 class="fw-bold">FSSAI</h5>
-                        <p class="text-muted small mb-0">Licensed Food Producer</p>
+                        <p class="text-muted small mb-0" data-key="cert-1">Licensed Producer</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="cert-card">
+                        <i class="fas fa-certificate cert-icon"></i>
+                        <h5 class="fw-bold">ISO 22000</h5>
+                        <p class="text-muted small mb-0" data-key="cert-2">Safety Standard</p>
                     </div>
                 </div>
                 <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
                     <div class="cert-card">
-                        <i class="fas fa-certificate cert-icon"></i>
-                        <h5 class="fw-bold">ISO 22000</h5>
-                        <p class="text-muted small mb-0">Safety Management</p>
+                        <i class="fas fa-check-double cert-icon"></i>
+                        <h5 class="fw-bold">HALAL</h5>
+                        <p class="text-muted small mb-0" data-key="cert-3">Global Quality</p>
                     </div>
                 </div>
                 <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
                     <div class="cert-card">
-                        <i class="fas fa-check-double cert-icon"></i>
-                        <h5 class="fw-bold">HALAL</h5>
-                        <p class="text-muted small mb-0">Global Compliance</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="cert-card">
                         <i class="fas fa-ship cert-icon"></i>
                         <h5 class="fw-bold">APEDA</h5>
-                        <p class="text-muted small mb-0">Export Certified</p>
+                        <p class="text-muted small mb-0" data-key="cert-4">Export Certified</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="products" class="py-5 bg-white">
-        <div class="container text-center">
-            <h2 class="section-title" data-aos="fade-down">Our Premium Range</h2>
-            <div class="row g-4 mt-2">
-                <div class="col-md-3 col-sm-6" data-aos="fade-up">
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?auto=format&fit=crop&w=400&q=80" alt="Onion Powder">
-                        <div class="p-3">
-                            <h5 class="fw-bold">Onion Powder</h5>
-                            <p class="text-muted small">Fine mesh, highly aromatic</p>
-                            <a href="#contact" class="btn btn-sm btn-outline-dark rounded-pill">Inquire</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1614735241165-6756e1df61ab?auto=format&fit=crop&w=400&q=80" alt="Onion Flakes">
-                        <div class="p-3">
-                            <h5 class="fw-bold">Onion Flakes</h5>
-                            <p class="text-muted small">Kibbled & Dehydrated</p>
-                            <a href="#contact" class="btn btn-sm btn-outline-dark rounded-pill">Inquire</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="product-card">
-                        <img src="./images/Garlic Powder.jpg" alt="Garlic Powder">
-                        <div class="p-3">
-                            <h5 class="fw-bold">Garlic Powder</h5>
-                            <p class="text-muted small">100% Pure Concentrate</p>
-                            <a href="#contact" class="btn btn-sm btn-outline-dark rounded-pill">Inquire</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=400&q=80" alt="Ginger Powder">
-                        <div class="p-3">
-                            <h5 class="fw-bold">Ginger Powder</h5>
-                            <p class="text-muted small">Spicy & Fresh Scent</p>
-                            <a href="#contact" class="btn btn-sm btn-outline-dark rounded-pill">Inquire</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="specs" class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="section-title" data-aos="fade-down">Technical Data</h2>
-            <div class="row justify-content-center mt-4">
-                <div class="col-lg-10" data-aos="fade-up">
-                    <div class="table-responsive shadow rounded-4 overflow-hidden">
-                        <table class="table table-hover bg-white mb-0 text-start">
-                            <thead class="bg-dark text-white">
-                                <tr>
-                                    <th class="py-3 px-4">Parameter</th>
-                                    <th class="py-3 px-4">Standard Specification</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="fw-bold px-4">Physical State</td><td class="px-4">Free Flowing Powder</td></tr>
-                                <tr><td class="fw-bold px-4">Color</td><td class="px-4">Off-White to Light Yellow</td></tr>
-                                <tr><td class="fw-bold px-4">Moisture</td><td class="px-4">6%</td></tr>
-                                <tr><td class="fw-bold px-4">Shelf Life</td><td class="px-4">18 Months</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="process" class="process-bg text-center">
+    <section id="products" class="py-5 bg-white text-center">
         <div class="container">
-            <h2 class="section-title text-white" data-aos="fade-down">Processing Stages</h2>
-            <div class="row g-4 mt-3">
-                <div class="col-4 col-md-2" data-aos="fade-up"><i class="fas fa-seedling process-icon"></i><p>Sourcing</p></div>
-                <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-hand-sparkles process-icon"></i><p>Cleaning</p></div>
-                <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-tint process-icon"></i><p>Washing</p></div>
-                <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-wind process-icon"></i><p>Drying</p></div>
-                <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="400"><i class="fas fa-vial process-icon"></i><p>Lab Test</p></div>
-                <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="500"><i class="fas fa-box process-icon"></i><p>Packing</p></div>
+            <h2 class="section-title" data-key="title-products">Our Premium Range</h2>
+            <div class="row g-4 mt-2">
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;">
+                        <div class="p-3">
+                            <h5 class="fw-bold" data-key="prod-1-title">Onion Powder</h5>
+                            <p class="text-muted small" data-key="prod-1-desc">Fine mesh aromatic</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1614735241165-6756e1df61ab?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;">
+                        <div class="p-3">
+                            <h5 class="fw-bold" data-key="prod-2-title">Onion Flakes</h5>
+                            <p class="text-muted small" data-key="prod-2-desc">Dehydrated Kibbled</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;">
+                        <div class="p-3">
+                            <h5 class="fw-bold" data-key="prod-3-title">Garlic Powder</h5>
+                            <p class="text-muted small" data-key="prod-3-desc">100% Pure</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;">
+                        <div class="p-3">
+                            <h5 class="fw-bold" data-key="prod-4-title">Ginger Powder</h5>
+                            <p class="text-muted small" data-key="prod-4-desc">Fresh Scent</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -312,29 +197,22 @@
     <section id="contact" class="py-5">
         <div class="container">
             <div class="row g-5 align-items-center">
-                <div class="col-md-6" data-aos="fade-right">
-                    <h2 class="section-title">Inquiry Form</h2>
+                <div class="col-md-6">
+                    <h2 class="section-title" data-key="title-inquiry">Inquiry Form</h2>
                     <form id="contactForm" class="p-4 bg-white rounded-4 shadow">
-                        <div class="mb-3"><input type="text" class="form-control" placeholder="Name" required></div>
-                        <div class="mb-3"><input type="email" class="form-control" placeholder="Email" required></div>
-                        <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Your Requirement"></textarea></div>
-                        <button type="submit" class="btn btn-custom w-100 py-3">Send Message</button>
+                        <div class="mb-3"><input type="text" id="name" class="form-control" placeholder="Name" required></div>
+                        <div class="mb-3"><input type="email" id="email" class="form-control" placeholder="Email" required></div>
+                        <div class="mb-3"><input type="text" id="mobile" class="form-control" placeholder="Mobile Number" required></div>
+                        <div class="mb-3"><textarea id="message" class="form-control" rows="4" placeholder="Your Requirement"></textarea></div>
+                        <button type="submit" class="btn btn-custom w-100 py-3" data-key="btn-send">Send to WhatsApp</button>
                     </form>
                 </div>
-                <div class="col-md-6" data-aos="fade-left">
+                <div class="col-md-6">
                     <div class="ps-md-5">
-                        <div class="d-flex mb-4 align-items-center">
-                            <div class="bg-white shadow p-3 rounded-circle me-3"><i class="fas fa-map-marker-alt text-danger fs-4"></i></div>
-                            <div><h6 class="fw-bold mb-0">Location</h6><p class="text-muted mb-0">Spice Zone, Nashik, India</p></div>
-                        </div>
-                        <div class="d-flex mb-4 align-items-center">
-                            <div class="bg-white shadow p-3 rounded-circle me-3"><i class="fas fa-phone text-primary fs-4"></i></div>
-                            <div><h6 class="fw-bold mb-0">Phone</h6><p class="text-muted mb-0">+91 7745009409</p></div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="bg-white shadow p-3 rounded-circle me-3"><i class="fas fa-envelope text-warning fs-4"></i></div>
-                            <div><h6 class="fw-bold mb-0">Email</h6><p class="text-muted mb-0">export@sindhuraveggie.com</p></div>
-                        </div>
+                        <h4 class="fw-bold mb-4" data-key="contact-info">Contact Info</h4>
+                        <p><i class="fas fa-map-marker-alt text-danger me-2"></i> Nashik, Maharashtra, India</p>
+                        <p><i class="fas fa-phone text-primary me-2"></i> +91 7745009409</p>
+                        <p><i class="fas fa-envelope text-warning me-2"></i> export@sindhuraveggie.com</p>
                     </div>
                 </div>
             </div>
@@ -343,8 +221,8 @@
 
     <footer class="text-center">
         <div class="container">
-            <h2 class="fw-bold text-white mb-4">Sindhura<span class="brand-veggie">Veggie</span></h2>
-            <p class="opacity-50">&copy; 2026 Sindhura Veggie India. All Rights Reserved.</p>
+            <h2 class="fw-bold text-white mb-2">Sindhura<span class="brand-veggie">Veggie</span></h2>
+            <p class="opacity-50" data-key="footer-copy">&copy; 2026 Sindhura Veggie India. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -355,27 +233,84 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Scroll Effect for Navbar
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('.navbar');
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
+        // --- LANGUAGE DICTIONARY ---
+        const langData = {
+            en: {
+                "nav-home": "Home", "nav-products": "Products", "nav-specs": "Specs", "nav-contact": "Contact",
+                "hero-sub": "Sindhura Veggie India", "hero-title": "Premium Onion <br> Powder Manufacturer",
+                "hero-desc": "Supplying Export-Quality Dehydrated Spices Globally.",
+                "btn-products": "Our Products", "btn-inquiry": "Inquiry Now",
+                "title-certs": "Certifications", "cert-1": "Licensed Producer", "cert-2": "Safety Standard", "cert-3": "Global Quality", "cert-4": "Export Certified",
+                "title-products": "Our Premium Range", "prod-1-title": "Onion Powder", "prod-1-desc": "Fine mesh aromatic",
+                "prod-2-title": "Onion Flakes", "prod-2-desc": "Dehydrated Kibbled",
+                "prod-3-title": "Garlic Powder", "prod-3-desc": "100% Pure",
+                "prod-4-title": "Ginger Powder", "prod-4-desc": "Fresh Scent",
+                "title-inquiry": "Inquiry Form", "btn-send": "Send to WhatsApp", "contact-info": "Contact Info",
+                "footer-copy": "© 2026 Sindhura Veggie India. All Rights Reserved."
+            },
+            hi: {
+                "nav-home": "होम", "nav-products": "उत्पाद", "nav-specs": "विवरण", "nav-contact": "संपर्क",
+                "hero-sub": "सिंधुरा वेजी इंडिया", "hero-title": "प्रीमियम प्याज <br> पाउडर निर्माता",
+                "hero-desc": "विश्व स्तर पर निर्यात-गुणवत्ता वाले निर्जलित मसालों की आपूर्ति।",
+                "btn-products": "हमारे उत्पाद", "btn-inquiry": "अभी पूछताछ करें",
+                "title-certs": "प्रमाणपत्र", "cert-1": "लाइसेंस प्राप्त निर्माता", "cert-2": "सुरक्षा मानक", "cert-3": "वैश्विक गुणवत्ता", "cert-4": "निर्यात प्रमाणित",
+                "title-products": "हमारी प्रीमियम रेंज", "prod-1-title": "प्याज पाउडर", "prod-1-desc": "बढ़िया सुगंधित",
+                "prod-2-title": "प्याज के गुच्छे", "prod-2-desc": "निर्जलित किबल्ड",
+                "prod-3-title": "लहसुन पाउडर", "prod-3-desc": "100% शुद्ध",
+                "prod-4-title": "अदरक पाउडर", "prod-4-desc": "ताजी सुगंध",
+                "title-inquiry": "पूछताछ फॉर्म", "btn-send": "व्हाट्सएप पर भेजें", "contact-info": "संपर्क जानकारी",
+                "footer-copy": "© 2026 सिंधुरा वेजी इंडिया। सर्वाधिकार सुरक्षित।"
+            },
+            mr: {
+                "nav-home": "मुख्यपृष्ठ", "nav-products": "उत्पादने", "nav-specs": "तपशील", "nav-contact": "संपर्क",
+                "hero-sub": "सिंधुरा वेजी इंडिया", "hero-title": "प्रीमियम कांदा <br> पावडर उत्पादक",
+                "hero-desc": "जागतिक स्तरावर निर्यात-गुणवत्तेच्या निर्जलित मसाल्यांचा पुरवठा।",
+                "btn-products": "आमची उत्पादने", "btn-inquiry": "चौकशी करा",
+                "title-certs": "प्रमाणपत्रे", "cert-1": "परवानाधारक उत्पादक", "cert-2": "सुरक्षा मानक", "cert-3": "जागतिक गुणवत्ता", "cert-4": "निर्यात प्रमाणित",
+                "title-products": "आमची प्रीमियम श्रेणी", "prod-1-title": "कांदा पावडर", "prod-1-desc": "उत्कृष्ट सुगंधी",
+                "prod-2-title": "कांदा फ्लेक्स", "prod-2-desc": "निर्जलित तुकडे",
+                "prod-3-title": "लसूण पावडर", "prod-3-desc": "१००% शुद्ध",
+                "prod-4-title": "आले पावडर", "prod-4-desc": "ताजा सुगंध",
+                "title-inquiry": "चौकशी फॉर्म", "btn-send": "व्हाट्सएपवर पाठवा", "contact-info": "संपर्क माहिती",
+                "footer-copy": "© २०२६ सिंधुरा वेजी इंडिया. सर्व हक्क राखीव."
+            }
+        };
 
-        // Form Alert
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (langData[lang][key]) {
+                    el.innerHTML = langData[lang][key];
+                }
+            });
+            // Update Placeholders
+            if(lang === 'mr') {
+                document.getElementById('name').placeholder = "नाव";
+                document.getElementById('message').placeholder = "तुमची गरज सांगा";
+            } else if(lang === 'hi') {
+                document.getElementById('name').placeholder = "नाम";
+                document.getElementById('message').placeholder = "आपकी आवश्यकता";
+            } else {
+                document.getElementById('name').placeholder = "Name";
+                document.getElementById('message').placeholder = "Your Requirement";
+            }
+        }
+
+        // --- WHATSAPP LOGIC ---
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Request Sent! Our team will contact you soon.');
-            this.reset();
+            let name = document.getElementById("name").value;
+            let mobile = document.getElementById("mobile").value;
+            let msg = document.getElementById("message").value;
+            let phoneNumber = "919665022283";
+            let finalMsg = `Hello Sindhura Veggie,%0A*Name:* ${name}%0A*Mobile:* ${mobile}%0A*Requirement:* ${msg}`;
+            window.open(`https://wa.me/${phoneNumber}?text=${finalMsg}`, "_blank");
         });
-
-        // Security
-        document.onkeydown = (e) => {
-            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) return false;
-        };
     </script>
 </body>
 </html>
