@@ -33,7 +33,7 @@
             background: var(--accent-color);
             border: none;
             color: white;
-            padding: 5px 10px;
+            padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -49,28 +49,41 @@
         }
         .hero-title { font-family: 'Playfair Display', serif; font-size: 4.5rem; text-transform: uppercase; font-weight: 700; line-height: 1.1; }
 
-        .btn-custom { background-color: var(--primary-color); color: white; border-radius: 30px; padding: 12px 35px; border: none; transition: 0.3s; font-weight: 600; }
+        .btn-custom { background-color: var(--primary-color); color: white; border-radius: 30px; padding: 12px 35px; border: none; transition: 0.3s; font-weight: 600; text-decoration: none; display: inline-block; }
         .btn-custom:hover { background-color: #5a3821; color: white; transform: translateY(-3px); }
 
         /* --- Cards & Titles --- */
-        .product-card, .cert-card { background: white; border-radius: 15px; overflow: hidden; transition: 0.4s; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; }
+        .product-card { background: white; border-radius: 15px; overflow: hidden; transition: 0.4s; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; }
         .product-card:hover { transform: translateY(-12px); }
-        .cert-card { padding: 30px; border-bottom: 4px solid var(--accent-color); text-align: center; }
+        
+        .cert-card { 
+            background: white; padding: 30px; border-radius: 15px; 
+            border-bottom: 4px solid var(--accent-color); 
+            text-align: center; height: 100%; transition: 0.3s;
+        }
+        .cert-card:hover { background: var(--primary-color); color: white; }
         .cert-icon { font-size: 3rem; color: var(--accent-color); margin-bottom: 15px; }
+        .cert-card:hover .cert-icon { color: white; }
+
         .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 50px; position: relative; display: inline-block; }
         .section-title::after { content: ''; width: 50%; height: 3px; background: var(--accent-color); position: absolute; bottom: -10px; left: 25%; }
 
+        /* --- Process Flow --- */
         .process-bg { background-color: #3d2b1f; color: white; padding: 80px 0; }
         .process-icon { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 10px; }
 
         /* --- Floating Buttons --- */
         .fixed-contact-buttons { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 2000; }
-        .contact-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; text-decoration: none; transition: 0.3s; }
+        .contact-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .whatsapp-btn { background-color: #25d366; }
         .call-btn { background-color: #007bff; }
 
         footer { background: var(--dark-footer); color: white; padding: 50px 0; }
-        @media (max-width: 768px) { .hero-title { font-size: 2.5rem; } .section-title { font-size: 2rem; } }
+        
+        @media (max-width: 768px) { 
+            .hero-title { font-size: 2.5rem; } 
+            .section-title { font-size: 2rem; } 
+        }
     </style>
 </head>
 
@@ -109,7 +122,7 @@
             <p class="lead mb-4 fs-4 opacity-75" data-key="hero-desc">Supplying Export-Quality Dehydrated Spices Globally.</p>
             <div class="mt-4">
                 <a href="#products" class="btn btn-custom btn-lg me-2" data-key="btn-products">Our Products</a>
-                <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill px-4" data-key="btn-inquiry">Inquiry Now</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill px-4 text-decoration-none" data-key="btn-inquiry">Inquiry Now</a>
             </div>
         </div>
     </header>
@@ -156,7 +169,7 @@
             <div class="row g-4 mt-2">
                 <div class="col-md-3 col-sm-6">
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Onion Powder">
                         <div class="p-3">
                             <h5 class="fw-bold" data-key="prod-1-title">Onion Powder</h5>
                             <p class="text-muted small" data-key="prod-1-desc">Fine mesh aromatic</p>
@@ -165,7 +178,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1614735241165-6756e1df61ab?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1614735241165-6756e1df61ab?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Onion Flakes">
                         <div class="p-3">
                             <h5 class="fw-bold" data-key="prod-2-title">Onion Flakes</h5>
                             <p class="text-muted small" data-key="prod-2-desc">Dehydrated Kibbled</p>
@@ -174,7 +187,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Garlic Powder">
                         <div class="p-3">
                             <h5 class="fw-bold" data-key="prod-3-title">Garlic Powder</h5>
                             <p class="text-muted small" data-key="prod-3-desc">100% Pure</p>
@@ -183,13 +196,53 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Ginger Powder">
                         <div class="p-3">
                             <h5 class="fw-bold" data-key="prod-4-title">Ginger Powder</h5>
                             <p class="text-muted small" data-key="prod-4-desc">Fresh Scent</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specs" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="section-title" data-key="title-tech" data-aos="fade-down">Technical Data</h2>
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-10" data-aos="fade-up">
+                    <div class="table-responsive shadow rounded-4 overflow-hidden">
+                        <table class="table table-hover bg-white mb-0 text-start">
+                            <thead class="bg-dark text-white">
+                                <tr>
+                                    <th class="py-3 px-4" data-key="th-1">Parameter</th>
+                                    <th class="py-3 px-4" data-key="th-2">Standard Specification</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="fw-bold px-4" data-key="td-p1">Physical State</td><td class="px-4" data-key="td-v1">Free Flowing Powder</td></tr>
+                                <tr><td class="fw-bold px-4" data-key="td-p2">Color</td><td class="px-4" data-key="td-v2">Off-White to Light Yellow</td></tr>
+                                <tr><td class="fw-bold px-4" data-key="td-p3">Moisture</td><td class="px-4" data-key="td-v3">Max 6%</td></tr>
+                                <tr><td class="fw-bold px-4" data-key="td-p4">Shelf Life</td><td class="px-4" data-key="td-v4">18 Months</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process-bg text-center">
+        <div class="container">
+            <h2 class="section-title text-white" data-key="title-process" data-aos="fade-down">Processing Stages</h2>
+            <div class="row g-4 mt-3">
+                <div class="col-4 col-md-2" data-aos="fade-up"><i class="fas fa-seedling process-icon"></i><p data-key="proc-1">Sourcing</p></div>
+                <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-hand-sparkles process-icon"></i><p data-key="proc-2">Cleaning</p></div>
+                <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-tint process-icon"></i><p data-key="proc-3">Washing</p></div>
+                <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-wind process-icon"></i><p data-key="proc-4">Drying</p></div>
+                <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="400"><i class="fas fa-vial process-icon"></i><p data-key="proc-5">Lab Test</p></div>
+                <div class="col-4 col-md-2" data-aos="fade-up" data-aos-delay="500"><i class="fas fa-box process-icon"></i><p data-key="proc-6">Packing</p></div>
             </div>
         </div>
     </section>
@@ -249,6 +302,13 @@
                 "prod-2-title": "Onion Flakes", "prod-2-desc": "Dehydrated Kibbled",
                 "prod-3-title": "Garlic Powder", "prod-3-desc": "100% Pure",
                 "prod-4-title": "Ginger Powder", "prod-4-desc": "Fresh Scent",
+                "title-tech": "Technical Data", "th-1": "Parameter", "th-2": "Standard Specification",
+                "td-p1": "Physical State", "td-v1": "Free Flowing Powder",
+                "td-p2": "Color", "td-v2": "Off-White to Light Yellow",
+                "td-p3": "Moisture", "td-v3": "Max 6%",
+                "td-p4": "Shelf Life", "td-v4": "18 Months",
+                "title-process": "Processing Stages",
+                "proc-1": "Sourcing", "proc-2": "Cleaning", "proc-3": "Washing", "proc-4": "Drying", "proc-5": "Lab Test", "proc-6": "Packing",
                 "title-inquiry": "Inquiry Form", "btn-send": "Send to WhatsApp", "contact-info": "Contact Info",
                 "footer-copy": "© 2026 Sindhura Veggie India. All Rights Reserved."
             },
@@ -262,6 +322,13 @@
                 "prod-2-title": "प्याज के गुच्छे", "prod-2-desc": "निर्जलित किबल्ड",
                 "prod-3-title": "लहसुन पाउडर", "prod-3-desc": "100% शुद्ध",
                 "prod-4-title": "अदरक पाउडर", "prod-4-desc": "ताजी सुगंध",
+                "title-tech": "तकनीकी डेटा", "th-1": "पैरामीटर", "th-2": "मानक विशिष्टता",
+                "td-p1": "भौतिक अवस्था", "td-v1": "मुक्त बहने वाला पाउडर",
+                "td-p2": "रंग", "td-v2": "ऑफ-व्हाइट से हल्का पीला",
+                "td-p3": "नमी", "td-v3": "अधिकतम 6%",
+                "td-p4": "शेल्फ लाइफ", "td-v4": "18 महीने",
+                "title-process": "प्रसंस्करण चरण",
+                "proc-1": "सोर्सिंग", "proc-2": "सफाई", "proc-3": "धुलाई", "proc-4": "सुखाना", "proc-5": "लैब टेस्ट", "proc-6": "पैकिंग",
                 "title-inquiry": "पूछताछ फॉर्म", "btn-send": "व्हाट्सएप पर भेजें", "contact-info": "संपर्क जानकारी",
                 "footer-copy": "© 2026 सिंधुरा वेजी इंडिया। सर्वाधिकार सुरक्षित।"
             },
@@ -275,6 +342,13 @@
                 "prod-2-title": "कांदा फ्लेक्स", "prod-2-desc": "निर्जलित तुकडे",
                 "prod-3-title": "लसूण पावडर", "prod-3-desc": "१००% शुद्ध",
                 "prod-4-title": "आले पावडर", "prod-4-desc": "ताजा सुगंध",
+                "title-tech": "तांत्रिक माहिती", "th-1": "घटक", "th-2": "मानक वैशिष्ट्ये",
+                "td-p1": "भौतिक स्थिती", "td-v1": "बारीक कोरडी पावडर",
+                "td-p2": "रंग", "td-v2": "पांढरट ते फिक्कट पिवळा",
+                "td-p3": "ओलावा", "td-v3": "कमाल 6%",
+                "td-p4": "टिकण्याची क्षमता", "td-v4": "18 महिने",
+                "title-process": "प्रक्रिया टप्पे",
+                "proc-1": "खरेदी", "proc-2": "सफाई", "proc-3": "धुलाई", "proc-4": "वाळवणे", "proc-5": "लॅब टेस्ट", "proc-6": "पॅकिंग",
                 "title-inquiry": "चौकशी फॉर्म", "btn-send": "व्हाट्सएपवर पाठवा", "contact-info": "संपर्क माहिती",
                 "footer-copy": "© २०२६ सिंधुरा वेजी इंडिया. सर्व हक्क राखीव."
             }
