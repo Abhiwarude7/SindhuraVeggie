@@ -16,53 +16,58 @@
             --accent-color: #f4a261;
             --light-bg: #fdf5e6;
             --dark-footer: #2c1b0e;
-            --glass-bg: rgba(0, 0, 0, 0.85);
+            --glass-bg: rgba(0, 0, 0, 0.9);
         }
 
         body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: #333; overflow-x: hidden; }
         html { scroll-behavior: smooth; }
 
-        /* --- Navbar & Language Switcher --- */
-        .navbar { background: var(--glass-bg) !important; backdrop-filter: blur(10px); padding: 15px 0; transition: all 0.3s ease; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        /* --- Navbar Enhancements --- */
+        .navbar { 
+            background: transparent !important; 
+            padding: 20px 0; 
+            transition: all 0.4s ease; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+        .navbar.scrolled { 
+            background: var(--glass-bg) !important; 
+            padding: 10px 0; 
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
         .navbar-brand { font-family: 'Playfair Display', serif; }
         .brand-sindhura { color: white; }
         .brand-veggie { color: var(--accent-color); }
-        .nav-link { color: white !important; font-weight: 500; margin: 0 10px; }
+        .nav-link { color: white !important; font-weight: 500; margin: 0 10px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--accent-color) !important; }
         
         .lang-switcher {
-            background: var(--accent-color);
-            border: none;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-left: 10px;
+            background: var(--accent-color); border: none; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; margin-left: 10px;
         }
 
         /* --- Hero Section --- */
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
                         url('https://images.unsplash.com/photo-1580201092675-a0a6a6cafbb1?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center; height: 95vh; display: flex; align-items: center; color: white; text-align: center;
+            background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; color: white; text-align: center;
         }
         .hero-title { font-family: 'Playfair Display', serif; font-size: 4.5rem; text-transform: uppercase; font-weight: 700; line-height: 1.1; }
 
         .btn-custom { background-color: var(--primary-color); color: white; border-radius: 30px; padding: 12px 35px; border: none; transition: 0.3s; font-weight: 600; text-decoration: none; display: inline-block; }
-        .btn-custom:hover { background-color: #5a3821; color: white; transform: translateY(-3px); }
+        .btn-custom:hover { background-color: #5a3821; color: white; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        /* --- Cards & Titles --- */
-        .product-card { background: white; border-radius: 15px; overflow: hidden; transition: 0.4s; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; }
-        .product-card:hover { transform: translateY(-12px); }
+        /* --- Product Cards --- */
+        .product-card { background: white; border-radius: 15px; overflow: hidden; transition: 0.4s; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%; border: 1px solid transparent; }
+        .product-card:hover { transform: translateY(-12px); border-color: var(--accent-color); }
         
+        /* --- Certifications --- */
         .cert-card { 
             background: white; padding: 30px; border-radius: 15px; 
             border-bottom: 4px solid var(--accent-color); 
             text-align: center; height: 100%; transition: 0.3s;
         }
-        .cert-card:hover { background: var(--primary-color); color: white; }
-        .cert-icon { font-size: 3rem; color: var(--accent-color); margin-bottom: 15px; }
+        .cert-card:hover { background: var(--primary-color); color: white; transform: scale(1.05); }
+        .cert-icon { font-size: 3rem; color: var(--accent-color); margin-bottom: 15px; transition: 0.3s; }
         .cert-card:hover .cert-icon { color: white; }
 
         .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 50px; position: relative; display: inline-block; }
@@ -72,11 +77,17 @@
         .process-bg { background-color: #3d2b1f; color: white; padding: 80px 0; }
         .process-icon { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 10px; }
 
-        /* --- Floating Buttons --- */
+        /* --- Floating Buttons & Back to Top --- */
         .fixed-contact-buttons { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 2000; }
         .contact-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .whatsapp-btn { background-color: #25d366; }
         .call-btn { background-color: #007bff; }
+        
+        #backToTop {
+            position: fixed; bottom: 175px; right: 35px; width: 45px; height: 45px; background: var(--primary-color); color: white;
+            border: none; border-radius: 8px; cursor: pointer; display: none; align-items: center; justify-content: center; z-index: 1000; transition: 0.3s;
+        }
+        #backToTop:hover { background: var(--accent-color); }
 
         footer { background: var(--dark-footer); color: white; padding: 50px 0; }
         
@@ -87,9 +98,11 @@
     </style>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold fs-3" href="#">
                 <span class="brand-sindhura">Sindhura</span><span class="brand-veggie">Veggie</span>
@@ -163,11 +176,12 @@
         </div>
     </section>
 
-    <section id="products" class="py-5 bg-white text-center">
+<section id="products" class="section-padding bg-white text-center">
         <div class="container">
             <h2 class="section-title" data-key="title-products">Our Premium Range</h2>
+            
             <div class="row g-4 mt-2">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in">
                     <div class="product-card">
                         <img src="https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Onion Powder">
                         <div class="p-3">
@@ -176,7 +190,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
                     <div class="product-card">
                         <img src="https://images.unsplash.com/photo-1614735241165-6756e1df61ab?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Onion Flakes">
                         <div class="p-3">
@@ -185,21 +199,60 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
                     <div class="product-card">
                         <img src="https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Garlic Powder">
                         <div class="p-3">
                             <h5 class="fw-bold" data-key="prod-3-title">Garlic Powder</h5>
-                            <p class="text-muted small" data-key="prod-3-desc">100% Pure</p>
+                            <p class="text-muted small" data-key="prod-3-desc">100% Pure & Strong</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
                     <div class="product-card">
                         <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Ginger Powder">
                         <div class="p-3">
                             <h5 class="fw-bold" data-key="prod-4-title">Ginger Powder</h5>
-                            <p class="text-muted small" data-key="prod-4-desc">Fresh Scent</p>
+                            <p class="text-muted small" data-key="prod-4-desc">Freshly Dehydrated</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Fried Onion">
+                        <div class="p-3">
+                            <h5 class="fw-bold" data-key="prod-5-title">Fried Onion</h5>
+                            <p class="text-muted small" data-key="prod-5-desc">Crispy & Golden Brown</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1618164435735-413d3b066c9a?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Onion Minced">
+                        <div class="p-3">
+                            <h5 class="fw-bold" data-key="prod-6-title">Onion Minced</h5>
+                            <p class="text-muted small" data-key="prod-6-desc">Uniformly Cut 1-3mm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Garlic Chopped">
+                        <div class="p-3">
+                            <h5 class="fw-bold" data-key="prod-7-title">Garlic Chopped</h5>
+                            <p class="text-muted small" data-key="prod-7-desc">Dried Granules</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=400&q=80" class="w-100" style="height:200px; object-fit:cover;" alt="Chili Powder">
+                        <div class="p-3">
+                            <h5 class="fw-bold" data-key="prod-8-title">Chili Powder</h5>
+                            <p class="text-muted small" data-key="prod-8-desc">High Color Value</p>
                         </div>
                     </div>
                 </div>
@@ -252,17 +305,20 @@
             <div class="row g-5 align-items-center">
                 <div class="col-md-6">
                     <h2 class="section-title" data-key="title-inquiry">Inquiry Form</h2>
-                    <form id="contactForm" class="p-4 bg-white rounded-4 shadow">
+                    <form id="contactForm" class="p-4 bg-white rounded-4 shadow needs-validation" novalidate>
                         <div class="mb-3"><input type="text" id="name" class="form-control" placeholder="Name" required></div>
                         <div class="mb-3"><input type="email" id="email" class="form-control" placeholder="Email" required></div>
                         <div class="mb-3"><input type="text" id="mobile" class="form-control" placeholder="Mobile Number" required></div>
-                        <div class="mb-3"><textarea id="message" class="form-control" rows="4" placeholder="Your Requirement"></textarea></div>
+                        <div class="mb-3"><textarea id="message" class="form-control" rows="4" placeholder="Your Requirement" required></textarea></div>
                         <button type="submit" class="btn btn-custom w-100 py-3" data-key="btn-send">Send to WhatsApp</button>
                     </form>
                 </div>
                 <div class="col-md-6">
                     <div class="ps-md-5">
                         <h4 class="fw-bold mb-4" data-key="contact-info">Contact Info</h4>
+                        <div class="rounded-4 overflow-hidden shadow mb-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119981.264150868!2d73.7210787!3d19.9974533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddee327961ebc7%3A0x71ed1b562529987a!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1711710000000" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                         <p><i class="fas fa-map-marker-alt text-danger me-2"></i> Nashik, Maharashtra, India</p>
                         <p><i class="fas fa-phone text-primary me-2"></i> +91 7745009409</p>
                         <p><i class="fas fa-envelope text-warning me-2"></i> export@sindhuraveggie.com</p>
@@ -290,7 +346,27 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // --- LANGUAGE DICTIONARY ---
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const btt = document.getElementById("backToTop");
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 500) {
+                btt.style.display = "flex";
+            } else {
+                btt.style.display = "none";
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
         const langData = {
             en: {
                 "nav-home": "Home", "nav-products": "Products", "nav-specs": "Specs", "nav-contact": "Contact",
@@ -302,6 +378,10 @@
                 "prod-2-title": "Onion Flakes", "prod-2-desc": "Dehydrated Kibbled",
                 "prod-3-title": "Garlic Powder", "prod-3-desc": "100% Pure",
                 "prod-4-title": "Ginger Powder", "prod-4-desc": "Fresh Scent",
+                "prod-5-title": "Fried Onion", "prod-5-desc": "Crispy & Golden Brown",
+                "prod-6-title": "Onion Minced", "prod-6-desc": "Uniformly Cut 1-3mm",
+                "prod-7-title": "Garlic Chopped", "prod-7-desc": "Dried Granules",
+                "prod-8-title": "Chili Powder", "prod-8-desc": "High Color Value",
                 "title-tech": "Technical Data", "th-1": "Parameter", "th-2": "Standard Specification",
                 "td-p1": "Physical State", "td-v1": "Free Flowing Powder",
                 "td-p2": "Color", "td-v2": "Off-White to Light Yellow",
@@ -322,6 +402,14 @@
                 "prod-2-title": "प्याज के गुच्छे", "prod-2-desc": "निर्जलित किबल्ड",
                 "prod-3-title": "लहसुन पाउडर", "prod-3-desc": "100% शुद्ध",
                 "prod-4-title": "अदरक पाउडर", "prod-4-desc": "ताजी सुगंध",
+                "prod-5-title": "तला हुआ प्याज", 
+                "prod-5-desc": "कुरकुरा और सुनहरा भूरा",
+                "prod-6-title": "कटा हुआ प्याज (Minced)", 
+                "prod-6-desc": "समान रूप से कटा हुआ (1-3 मिमी)",
+                "prod-7-title": "कटा हुआ लहसुन", 
+                "prod-7-desc": "सूखे दानेदार टुकड़े",
+                "prod-8-title": "लाल मिर्च पाउडर", 
+                "prod-8-desc": "गहरा लाल रंग और तीखा",
                 "title-tech": "तकनीकी डेटा", "th-1": "पैरामीटर", "th-2": "मानक विशिष्टता",
                 "td-p1": "भौतिक अवस्था", "td-v1": "मुक्त बहने वाला पाउडर",
                 "td-p2": "रंग", "td-v2": "ऑफ-व्हाइट से हल्का पीला",
@@ -342,6 +430,10 @@
                 "prod-2-title": "कांदा फ्लेक्स", "prod-2-desc": "निर्जलित तुकडे",
                 "prod-3-title": "लसूण पावडर", "prod-3-desc": "१००% शुद्ध",
                 "prod-4-title": "आले पावडर", "prod-4-desc": "ताजा सुगंध",
+                "prod-5-title": "तळलेला कांदा", "prod-5-desc": "खुसखुशीत आणि सोनेरी तपकिरी",
+                "prod-6-title": "बारीक चिरलेला कांदा", "prod-6-desc": "एकसमान कापलेला (१-३ मिमी)",
+                "prod-7-title": "चिरलेला लसूण", "prod-7-desc": "वाळवलेले दाणेदार तुकडे",
+                "prod-8-title": "मिरची पावडर", "prod-8-desc": "गडद लाल रंग आणि तिखट",
                 "title-tech": "तांत्रिक माहिती", "th-1": "घटक", "th-2": "मानक वैशिष्ट्ये",
                 "td-p1": "भौतिक स्थिती", "td-v1": "बारीक कोरडी पावडर",
                 "td-p2": "रंग", "td-v2": "पांढरट ते फिक्कट पिवळा",
@@ -358,32 +450,43 @@
             const elements = document.querySelectorAll('[data-key]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-key');
-                if (langData[lang][key]) {
-                    el.innerHTML = langData[lang][key];
-                }
+                if (langData[lang][key]) { el.innerHTML = langData[lang][key]; }
             });
-            // Update Placeholders
-            if(lang === 'mr') {
-                document.getElementById('name').placeholder = "नाव";
-                document.getElementById('message').placeholder = "तुमची गरज सांगा";
-            } else if(lang === 'hi') {
-                document.getElementById('name').placeholder = "नाम";
-                document.getElementById('message').placeholder = "आपकी आवश्यकता";
-            } else {
-                document.getElementById('name').placeholder = "Name";
-                document.getElementById('message').placeholder = "Your Requirement";
-            }
+            const p = {
+                en: ["Name", "Your Requirement"],
+                hi: ["नाम", "आपकी आवश्यकता"],
+                mr: ["नाव", "तुमची गरज सांगा"]
+            };
+            document.getElementById('name').placeholder = p[lang][0];
+            document.getElementById('message').placeholder = p[lang][1];
         }
 
-        // --- WHATSAPP LOGIC ---
         document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const form = e.target;
             e.preventDefault();
+            
+            if (!form.checkValidity()) {
+                e.stopPropagation();
+                form.classList.add('was-validated');
+                return;
+            }
+
             let name = document.getElementById("name").value;
             let mobile = document.getElementById("mobile").value;
+            let email = document.getElementById("email").value;
             let msg = document.getElementById("message").value;
             let phoneNumber = "919665022283";
-            let finalMsg = `Hello Sindhura Veggie,%0A*Name:* ${name}%0A*Mobile:* ${mobile}%0A*Requirement:* ${msg}`;
+            let finalMsg = `Hello Sindhura Veggie,%0A*Name:* ${name}%0A*Email:* ${email}%0A*Mobile:* ${mobile}%0A*Requirement:* ${msg}`;
             window.open(`https://wa.me/${phoneNumber}?text=${finalMsg}`, "_blank");
+        });
+
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const collapse = document.querySelector('.navbar-collapse');
+                if (collapse.classList.contains('show')) {
+                    new bootstrap.Collapse(collapse).hide();
+                }
+            });
         });
     </script>
 </body>
